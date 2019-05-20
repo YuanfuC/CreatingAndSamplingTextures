@@ -3,7 +3,7 @@
 //  RenderImageTexture
 //
 //  Created by ChenYuanfu on 2019/5/18.
-//  Copyright © 2019 CYF.demo.metal.learn.in.hard.way.demo-1. All rights reserved.
+//  Copyright © 2019 ChenYuanfu All rights reserved.
 //
 
 import UIKit

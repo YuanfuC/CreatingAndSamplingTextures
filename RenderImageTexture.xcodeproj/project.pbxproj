@@ -14,6 +14,10 @@
 		32A8ABB6228FA63B0005F620 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32A8ABB4228FA63B0005F620 /* LaunchScreen.storyboard */; };
 		32A8ABC1228FA63B0005F620 /* RenderImageTextureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A8ABC0228FA63B0005F620 /* RenderImageTextureTests.swift */; };
 		32A8ABCC228FA63B0005F620 /* RenderImageTextureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A8ABCB228FA63B0005F620 /* RenderImageTextureUITests.swift */; };
+		32A8ABDA228FA91D0005F620 /* ImageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A8ABD9228FA91D0005F620 /* ImageRenderer.swift */; };
+		32A8ABDC228FADF00005F620 /* test_antialiseing.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32A8ABDB228FADF00005F620 /* test_antialiseing.jpg */; };
+		32A8ABDE228FB7780005F620 /* ImageSharders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 32A8ABDD228FB7780005F620 /* ImageSharders.metal */; };
+		32A8ABE022924DAF0005F620 /* SharderDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A8ABDF22924DAF0005F620 /* SharderDefine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		32A8ABC7228FA63B0005F620 /* RenderImageTextureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RenderImageTextureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		32A8ABCB228FA63B0005F620 /* RenderImageTextureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderImageTextureUITests.swift; sourceTree = "<group>"; };
 		32A8ABCD228FA63B0005F620 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32A8ABD9228FA91D0005F620 /* ImageRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRenderer.swift; sourceTree = "<group>"; };
+		32A8ABDB228FADF00005F620 /* test_antialiseing.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_antialiseing.jpg; sourceTree = "<group>"; };
+		32A8ABDD228FB7780005F620 /* ImageSharders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ImageSharders.metal; sourceTree = "<group>"; };
+		32A8ABDF22924DAF0005F620 /* SharderDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharderDefine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +105,16 @@
 		32A8ABAA228FA63A0005F620 /* RenderImageTexture */ = {
 			isa = PBXGroup;
 			children = (
+				32A8ABDB228FADF00005F620 /* test_antialiseing.jpg */,
 				32A8ABAB228FA63A0005F620 /* AppDelegate.swift */,
 				32A8ABAD228FA63A0005F620 /* ViewController.swift */,
 				32A8ABAF228FA63A0005F620 /* Main.storyboard */,
 				32A8ABB2228FA63B0005F620 /* Assets.xcassets */,
 				32A8ABB4228FA63B0005F620 /* LaunchScreen.storyboard */,
 				32A8ABB7228FA63B0005F620 /* Info.plist */,
+				32A8ABD9228FA91D0005F620 /* ImageRenderer.swift */,
+				32A8ABDD228FB7780005F620 /* ImageSharders.metal */,
+				32A8ABDF22924DAF0005F620 /* SharderDefine.swift */,
 			);
 			path = RenderImageTexture;
 			sourceTree = "<group>";
@@ -189,7 +201,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
-				ORGANIZATIONNAME = "CYF.demo.metal.learn.in.hard.way.demo-1";
+				ORGANIZATIONNAME = ChenYuanfu;
 				TargetAttributes = {
 					32A8ABA7228FA63A0005F620 = {
 						CreatedOnToolsVersion = 10.2;
@@ -232,6 +244,7 @@
 				32A8ABB6228FA63B0005F620 /* LaunchScreen.storyboard in Resources */,
 				32A8ABB3228FA63B0005F620 /* Assets.xcassets in Resources */,
 				32A8ABB1228FA63A0005F620 /* Main.storyboard in Resources */,
+				32A8ABDC228FADF00005F620 /* test_antialiseing.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +270,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				32A8ABAE228FA63A0005F620 /* ViewController.swift in Sources */,
+				32A8ABDA228FA91D0005F620 /* ImageRenderer.swift in Sources */,
+				32A8ABE022924DAF0005F620 /* SharderDefine.swift in Sources */,
 				32A8ABAC228FA63A0005F620 /* AppDelegate.swift in Sources */,
+				32A8ABDE228FB7780005F620 /* ImageSharders.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +448,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7UKCH28MMH;
 				INFOPLIST_FILE = RenderImageTexture/Info.plist;
@@ -439,8 +456,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "CYF.zerozero.api.demo.-PinchTestdemo.RenderImageTexture";
+				PRODUCT_BUNDLE_IDENTIFIER = "CYF.demo.metal.learn.in.hard.way.demo-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -450,6 +468,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7UKCH28MMH;
 				INFOPLIST_FILE = RenderImageTexture/Info.plist;
@@ -457,8 +476,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "CYF.zerozero.api.demo.-PinchTestdemo.RenderImageTexture";
+				PRODUCT_BUNDLE_IDENTIFIER = "CYF.demo.metal.learn.in.hard.way.demo-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
